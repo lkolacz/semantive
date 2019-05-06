@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+#  db:
+#    image: postgres
+  app:
+      build:
+          context: ./app
+          dockerfile: ./Dockerfile
+#          args:
+#              ENV: dev
+#              REQUIREMENT_FILE: dev.pip
+      volumes:
+          - ./app:/opt/semantive/
+      ports:
+          - "8000:8000/tcp"
+          # - "127.0.0.1:8000:8000/tcp"
+          # - "127.0.0.1:8001:8001"
+      command: python manage.py runserver 0.0.0.0:8000
+#    depends_on:
+#      - db

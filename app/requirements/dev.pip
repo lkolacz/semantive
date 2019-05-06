@@ -1,0 +1,9 @@
+-r base.pip
+
+Fabric3==1.14.post1
+
+django-extensions
+django-debug-toolbar
+
+#ipdb3
+flake8==3.7.7
